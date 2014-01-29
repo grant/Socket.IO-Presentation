@@ -1,0 +1,22 @@
+{
+  "name": "Socket.IO-Presentation",
+  "version": "0.0.0",
+  "description": "A simple presentation on socket.io",
+  "main": "example.js",
+  "dependencies": {
+    "socket.io": "~0.9.16"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node example.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/granttimmerman/Socket.IO-Presentation.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/granttimmerman/Socket.IO-Presentation/issues"
+  }
+}
