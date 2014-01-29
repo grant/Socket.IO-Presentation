@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Example</title>
+    <head>
+        <script src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
+		<script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io.connect('//0.0.0.0:3000');
+
+            socket.on('welcome', function(data) {
+                $('#messages').append('<li>' + data.message + '</li>');
+
+                socket.emit('i am client', {data: 'See this, server?'});
+            });
+
+            socket.on('time', function(data) {
+                console.log(data);
+                $('#messages').append('<li>' + data.time + '</li>');
+            });
+
+            socket.on('error', function() { console.error(arguments) });
+            socket.on('message', function() { console.log(arguments) });
+        </script>
+    </head>
+    <body>
+    	<p>Run <code>$ node example.js</code> to start the server.</p>
+        <ul id='messages'></ul>
+    </body>
+</html>
